@@ -2,15 +2,12 @@
 
 A new Flutter project.
 
-## Getting Started
+We are building a journal app that allows you to write your thoughts and feelings and get a summary of your journal.
 
-This project is a starting point for a Flutter application.
+This journal is targeting teenagers and young adults who are having trouble accessing mental health services. AI will help them get a summary of their journal and help them understand their thoughts and feelings. In addition, through the weather agent, the journal will track if weather affects their mood.
 
-A few resources to get you started if this is your first Flutter project:
+In addition on the front page, AI will generate a summary of the journals and track any changes in their mood and mental health. 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
