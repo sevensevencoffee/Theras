@@ -32,6 +32,17 @@ class NotesGridPage extends StatelessWidget {
         title: const Text('+ New Note', style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
         elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.language, color: Colors.black54),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const LanguageSettingsPage()),
+              );
+            },
+          ),
+        ],
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(16),
@@ -417,6 +428,86 @@ class DashboardPage extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class LanguageSettingsPage extends StatefulWidget {
+  const LanguageSettingsPage({super.key});
+
+  @override
+  State<LanguageSettingsPage> createState() => _LanguageSettingsPageState();
+}
+
+class _LanguageSettingsPageState extends State<LanguageSettingsPage> {
+  final List<Map<String, dynamic>> _languages = [
+    {'name': 'English', 'code': 'en', 'isSelected': true},
+    {'name': 'Spanish', 'code': 'es', 'isSelected': false},
+    {'name': 'French', 'code': 'fr', 'isSelected': false},
+    {'name': 'German', 'code': 'de', 'isSelected': false},
+    {'name': 'Chinese', 'code': 'zh', 'isSelected': false},
+    {'name': 'Japanese', 'code': 'ja', 'isSelected': false},
+    {'name': 'Korean', 'code': 'ko', 'isSelected': false},
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFF3F2EE),
+      appBar: AppBar(
+        title: const Text('Language Settings',
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600)),
+        backgroundColor: const Color(0xFFF3F2EE),
+        elevation: 0,
+        leading: const BackButton(color: Colors.black),
+      ),
+      body: ListView.builder(
+        padding: const EdgeInsets.all(16),
+        itemCount: _languages.length,
+        itemBuilder: (context, index) {
+          return Card(
+            elevation: 0,
+            color: Colors.white,
+            margin: const EdgeInsets.only(bottom: 8),
+            child: ListTile(
+              title: Text(_languages[index]['name']),
+              trailing: Switch(
+                value: _languages[index]['isSelected'],
+                onChanged: (bool value) {
+                  setState(() {
+                    _languages[index]['isSelected'] = value;
+                  });
+                },
+              ),
+            ),
+          );
+        },
+      ),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: const BoxDecoration(
+          color: Color(0xFFF3F2EE),
+          border: Border(top: BorderSide(color: Colors.black12)),
+        ),
+        child: ElevatedButton(
+          onPressed: () {
+            // Save selected languages and return
+            List<String> selectedLanguages = _languages
+                .where((lang) => lang['isSelected'])
+                .map((lang) => lang['code'] as String)
+                .toList();
+            Navigator.pop(context, selectedLanguages);
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black,
+            padding: const EdgeInsets.symmetric(vertical: 16),
+          ),
+          child: const Text(
+            'Save Languages',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
       ),
     );

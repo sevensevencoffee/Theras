@@ -1,0 +1,14 @@
+{
+    "dummy_db_summarizer": {
+        "identity_key": "a2a40ec92e2e6941452fe8e4c609df507824325be6babdb8b7ce2d04dc956c6b",
+        "wallet_key": "7DW0otXPA0eadrncHxkN6P0j9uzq8B3MIVYXpyuq/SY="
+    },
+    "hardcoded_summarizer": {
+        "identity_key": "509b4fb12390ab2890337013cc71f31163c94591d54e2ff4ba5aae7dd92e36fc",
+        "wallet_key": "zLBS/qok21RSp8sDuF3QGBNKsPWqfzbsU5PfoDg300w="
+    },
+    "test_client": {
+        "identity_key": "9c43dee77e9a9e2a2cb873bde2369e5c77a810d0152f875a6cd5b0127efdecf1",
+        "wallet_key": "3+wCS1ZN71HpHyVGtnBlwGJzNEU4y5ZAI/SPWO+xDng="
+    }
+}
